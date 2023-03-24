@@ -24,9 +24,9 @@ request(url, function(error, response, html){
           i++;
         })
       }
-      for (var i = 1; i < rank+1; i++) {
-        console.log(stitle[i-1]);
-      }
+      // for (var i = 1; i < rank+1; i++) {
+      //   console.log(stitle[i-1]);
+      // }
       // // 업데이트 시간
       // console.log("("+up_date_arr[0]+"년 "+up_date_arr[1]+"월 "+up_date_arr[2]+"일 "+newtime+"시에 업데이트됨)");
       res.status(200).json(stitle)
