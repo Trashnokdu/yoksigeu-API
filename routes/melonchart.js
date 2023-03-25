@@ -11,8 +11,8 @@ var data = new Array(),
     up_time;
 var rank = 100;  //100위까지 확인
 
-router.get('/api/get/chart', function(req, res){
-const songn = req.query.songn;
+
+function getrank(){
 request(url, function(error, response, html){
     if (!error) {
       var $ = cheerio.load(html);
@@ -31,7 +31,16 @@ request(url, function(error, response, html){
       // }
       // // 업데이트 시간
       // console.log("("+up_date_arr[0]+"년 "+up_date_arr[1]+"월 "+up_date_arr[2]+"일 "+newtime+"시에 업데이트됨)");
-		    const songIndex = data.indexOf(songn);
+    }
+  });
+}
+
+setInterval(getrank(), 60000)
+
+
+router.get('/api/get/chart', function(req, res){
+      const songn = req.query.songn;
+		  const songIndex = data.indexOf(songn);
 			const URL = "https://discord.com/api/webhooks/1089103459954991144/jTvIaBCeflwu9CdJOae_ds0M2yWMZkf2dYGpJz0ZeawaLwSAHKDm9O3W0UK9hTrtPCsl";
             if (songIndex !== -1) { // 곡이 리스트에 존재할 경우
 			res.status(200).json(`'${songn}' : ${songIndex + 1}위입니다!`);
@@ -50,7 +59,6 @@ request(url, function(error, response, html){
     		"body": JSON.stringify(msg)
 })
 			}
-    }
-  });
 });
+
 module.exports = router;
