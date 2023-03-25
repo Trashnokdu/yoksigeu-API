@@ -34,13 +34,13 @@ request(url, function(error, response, html){
 		    const songIndex = data.indexOf(songn);
 			const URL = "https://discord.com/api/webhooks/1089103459954991144/jTvIaBCeflwu9CdJOae_ds0M2yWMZkf2dYGpJz0ZeawaLwSAHKDm9O3W0UK9hTrtPCsl";
             if (songIndex !== -1) { // 곡이 리스트에 존재할 경우
-			res.status(200).json(`'${songn}'은 현재 멜론차트 ${songIndex + 1}위입니다!`);
+			res.status(200).json(`'${songn}' : ${songIndex + 1}위입니다!`);
             } 
 			else { // 곡이 리스트에 존재하지 않을 경우
-            console.log(`'에에에에에엥ㅇ에에엥엥에ㅔㅔㅔ에에엥엥 버그나 아웃이이다야아아아아아아아아'`); // 에러 메시지 출력
-			res.status(200).json(`차트아웃! 수고하셨습니다!`);
+            // console.log(`'에에에에에엥ㅇ에에엥엥에ㅔㅔㅔ에에엥엥 버그나 아웃이이다야아아아아아아아아'`); // 에러 메시지 출력
+			res.status(200).json(`${songn} 은(는) 차트아웃 상태입니다`);
 			const msg = {
-			"content": "차트아웃을 확인해주세요!!!!!!!!! 차트아웃으로 확인됩니다!",
+			"content": '차트아웃을 확인해주세요!',
 }
 			fetch(URL, {
     			"method":"POST",
