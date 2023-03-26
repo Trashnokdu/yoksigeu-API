@@ -33,9 +33,10 @@ request(url, function(error, response, html){
       // console.log("("+up_date_arr[0]+"년 "+up_date_arr[1]+"월 "+up_date_arr[2]+"일 "+newtime+"시에 업데이트됨)");
     }
   });
+console.log("최신화 완료!");
 }
 
-setInterval(getrank(), 60000)
+setInterval(getrank, 120000)
 
 
 router.get('/api/get/chart', function(req, res){
