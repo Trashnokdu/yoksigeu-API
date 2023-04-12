@@ -35,20 +35,26 @@ request(url, function(error, response, html){
   });
 console.log("최신화 완료!");
 }
-
+getrank();
 setInterval(getrank, 120000)
 
 
 router.get('/api/get/chart', function(req, res){
       const songn = req.query.songn;
+const starttime = new Date(Date.UTC(2023, 2, 27, 9, 0, 0)); // 스트리밍 시작 시간을 UTC 시간으로 설정
 		  const songIndex = data.indexOf(songn);
 			const URL = "https://discord.com/api/webhooks/1089103459954991144/jTvIaBCeflwu9CdJOae_ds0M2yWMZkf2dYGpJz0ZeawaLwSAHKDm9O3W0UK9hTrtPCsl";
             if (songIndex !== -1) { // 곡이 리스트에 존재할 경우
-			res.status(200).json(`'${songn}' : ${songIndex + 1}위입니다!`);
+			res.status(200).json(`${songn}은(는) ${songIndex + 1}위입니다!`);
             } 
 			else { // 곡이 리스트에 존재하지 않을 경우
             // console.log(`'에에에에에엥ㅇ에에엥엥에ㅔㅔㅔ에에엥엥 버그나 아웃이이다야아아아아아아아아'`); // 에러 메시지 출력
 			res.status(200).json(`${songn} 은(는) 차트아웃 상태입니다`);
+			// const nowtime = new Date();
+			// const dday = starttime - nowtime;
+			// const ddayHour = Math.floor((dday / (1000*60*60)) % 24);
+			// const ddayMin = Math.floor((dday / (1000*60)) % 60);
+			// res.status(200).json(`스밍 시작까지 ${ddayHour}시간 ${ddayMin}분 남았습니다!`);
 			const msg = {
 			"content": '차트아웃을 확인해주세요!',
 }

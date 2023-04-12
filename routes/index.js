@@ -77,6 +77,7 @@ const forbiddenword = [
   "오타쿠",
   "애로",
   "에로",
+  "존내",
   "ㅈㄴ",
   "ㅈㄹ",
   "ㅉㅈ",
@@ -108,14 +109,17 @@ const forbiddenword = [
   "ㅗ",
   "fuck",
   "sex",
-  "tlqkf"
+  "tlqkf",
+  "2번",
+  "까 봐",
+  "지들이"
 ]
 
 var request = require('request');
 var express = require('express');
 var router = express.Router();
 const wordList = forbiddenword;
-const replaceChar = "​";
+const replaceChar = "‌";
 const app = express();
 /* GET home page. */
 router.get('/', function(req, res, next) {
