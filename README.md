@@ -1,3 +1,3 @@
-# [OUTDATED] yoksigeu-API
+# yoksigeu-API
 
-[OUTDATED] NEXTJS로 포팅후 미사용됩니다
+예토전생시킨 욕시그 API
