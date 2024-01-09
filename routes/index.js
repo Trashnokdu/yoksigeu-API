@@ -142,7 +142,8 @@ const forbiddenword = [
   "조까",
   "띠바",
   "ㅈ같",
-  "여잼"
+  "여잼",
+  "몰카"
 ]
 
 var request = require('request');
