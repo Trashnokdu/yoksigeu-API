@@ -49,7 +49,6 @@ const forbiddenword = [
   "ㅆㅂ",
   "ㅆㅃ",
   "싸개",
-  "샹",
   "새끼",
   "색함",
   "슈발",
@@ -66,9 +65,7 @@ const forbiddenword = [
   "씨뻘",
   "십덕",
   "십타쿠",
-  "썅",
   "쓰레기",
-  "씹",
   "아가리",
   "아닥",
   "아재",
@@ -96,7 +93,6 @@ const forbiddenword = [
   "존나",
   "졸라",
   "증오",
-  "좆",
   "죽어",
   "쥰내",
   "지랄",
@@ -123,18 +119,10 @@ const forbiddenword = [
   "본드",
   "코카인",
   "헤로인",
-  "부탄",
-  "공산",
-  "파시",
-  "민주",
-  "ㅗ",
   "fuck",
   "sex",
   "tlqkf",
-  "2번",
-  "까 봐",
   "지들이",
-  "ㄷㅋ",
   "음란",
   "쌔끼",
   "씨불",
@@ -163,6 +151,11 @@ router.get('/api/get/detect', function(req, res){
     var replacement = wordList[i].split('').join(replaceChar);
     fine = fine.replace(regex, replacement);
   }
+  fine = fine.replaceAll('샹', '샹')
+  fine = fine.replaceAll('썅', '썅')
+  fine = fine.replaceAll('씹', '씹')
+  fine = fine.replaceAll('좆', '좆')
+  fine = fine.replaceAll('ㅗ', 'ㅗ')
   res.status(200).json(fine);
 })
 
