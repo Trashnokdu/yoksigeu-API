@@ -155,7 +155,7 @@ router.get('/api/get/detect', function(req, res){
   fine = fine.replaceAll('썅', '썅')
   fine = fine.replaceAll('씹', '씹')
   fine = fine.replaceAll('좆', '좆')
-  fine = fine.replaceAll('ㅗ', 'ㅗ')
+  fine = fine.replaceAll('ㅗ', 'ᅩ')
   res.status(200).json(fine);
 })
 
